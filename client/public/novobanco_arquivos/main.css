@@ -1,0 +1,236 @@
+/* =css reset
+============================================================================= */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+/* -------------------------------------------  Clearfix-Hack ----------------------------------------------- */
+/* http://www.positioniseverything.net/easyclearing.html */
+/* http://www.456bereastreet.com/archive/200603/new_clearing_method_needed_for_ie7/ */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* General Elements                                                          
+============================================================================= */
+html {
+  height: 100%;
+}
+body {
+  line-height: 100%;
+  background: #edf4f5;
+  font-family: "NovoBancoText", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: #222222;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 20px 0 20px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a:link, a:visited {
+  color: #009f98;
+  text-decoration: underline;
+}
+a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+p a {
+  vertical-align: middle;
+}
+strong, em, b, i, h1, h2, h3, h4, h5, h6, address {
+}
+/* LAYOUT AREAS
+============================================================================= */
+#wrapper {
+  width: 964px;
+  margin: 6px auto 0 auto;
+}
+#header {
+  height: 76px;
+}
+#header #logotipo {
+  float: left;
+  margin-top: 22px;
+  width: 300px;
+  height: 60px;
+  background: url(../Resources/logo.png) no-repeat;
+}
+#content {
+  clear: both;
+  position: relative;
+  border: 1px solid #e0e7e8;
+  background: #fff;
+  z-index: 10;
+  padding: 15px;
+}
+#mainContent {
+  float: left;
+}
+/*Wide Template*/
+.wideTemplate #wrapper {
+  width: 992px;
+}
+.wideTemplate #mainContent {
+  float: none;
+  margin-bottom: 10px;
+}
+/* FOOTER */
+#footer {
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+#footerNav {
+  float: left;
+}
+#footer .printLink:link, #footer .printLink:visited {
+  position: absolute;
+  /*left: -1px;*/
+  left: 108px;
+  top: 0px;
+  background: transparent url(../../Resources/Login/bg_print.gif) no-repeat bottom left;
+  font-size: .625em;
+  padding: 9px 0 3px 32px;
+  display: block;
+  line-height: 1.2;
+  height: 1.6em;
+  width: 70px;
+}
+#footerNav {
+  float: left;
+  margin: 7px 0 0 240px;
+  font-size: .625em;
+}
+#footerNav a:link, #footerNav a:visited {
+  padding: 0 5px 0 5px;
+  border-right: 1px solid #009f98;
+}
+#footerNav a.lastLi {
+  border-right: none;
+}
+#footerInfo {
+  float: right;
+  margin: 7px 0 0 0;
+  font-size: .625em;
+}
+#certificacao {
+  float: left;
+  margin: 0 0 0 880px;
+  background: url(/web/Resources/ic_certificacao_off.png) no-repeat top left;
+  width: 86px;
+  height: 42px;
+}
+#certificacao:hover {
+  background: url(/web/Resources/ic_certificacao_on.png) no-repeat top left;
+}
+/* SECTIONS
+============================================================================= */
+/*Tabbed*/
+.tabbedSection {
+  background: #fff;
+  border: none;
+  width: 706px;
+}
+.tabbedSection .sectionHeaderBG {
+  background: transparent url(../../Resources/Login/bg_sectionHeader.gif) no-repeat 100% 5px;
+}
+.tabbedSection .tabNav li {
+  float: left;
+}
+.tabbedSection .tabContent {
+  clear: both;
+  background: #e0e7e8;
+  border: 1px solid #c0ceca;
+}
+.tabbedSection .tabInactive {
+  display: none;
+}
+.tabbedSection .tabActive {}
+/*Not Tabbed*/
+.section {
+  background: #e0e7e8;
+  border: 1px solid #c0ceca;
+  width: 706px;
+}
+/*Secção sem header*/
+.toggleSection DIV.sectionHeaderBG2 {
+  background: transparent url(../../Resources/Login/bg_boxheader2.gif) no-repeat top left;
+  border-bottom: none;
+  height: 4px;
+}
+/*Secção com header*/
+.toggleSection {
+  border-width: 0 0 1px 0;
+}
+.section .sectionHeaderBG {
+  background: transparent url(../../Resources/Login/bg_boxheader.gif) no-repeat top left;
+}
+.sectionBody {
+  border: 1px solid #c0ceca;
+  border-width: 0 1px;
+  overflow: hidden;
+}
+/*General for both typos os sections*/
+.sectionHeader {
+  position: relative;
+  border-bottom: 1px solid #c0ceca;
+  margin-bottom: -1px;
+}
+.sectionHeader h3 {
+  font-size: .875em;
+  font-weight: bold;
+  padding: 6px 0 6px 14px;
+  clear: none;
+}
+/* Textos
+============================================================================= */
+/*Título do Serviço*/
+#mainContent h2 {
+  font-size: 1.125em;
+  margin: 5px 0 12px 0;
+}
+.wideTemplate #mainContent h2 {
+  margin-left: 15px;
+}
+/* IFRAME ONDE ENTRAM OS SERVIÇOS
+============================================================================= */
+#SERV {
+  background-color: transparent;
+  width: 98%;
+  float: right;
+}

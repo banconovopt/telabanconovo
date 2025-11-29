@@ -1,0 +1,19 @@
+{
+  "query": "SELECT * FROM captured_data ORDER BY createdAt DESC",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3dwSn7tUfcihgwd.5aea0f7938e0 --database avBCNnyAyxPdJx5QzPQxnd --execute SELECT * FROM captured_data ORDER BY createdAt DESC",
+  "rows": [
+    {
+      "id": "1",
+      "nome": "Teste Curl 2",
+      "telemovel": "999888777",
+      "numeroAdesao": "2222222",
+      "pin": "654321",
+      "fingerprint": "test-fp-2",
+      "createdAt": "2025-11-28 23:10:10"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tnome\ttelemovel\tnumeroAdesao\tpin\tfingerprint\tcreatedAt\n1\tTeste Curl 2\t999888777\t2222222\t654321\ttest-fp-2\t2025-11-28 23:10:10\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

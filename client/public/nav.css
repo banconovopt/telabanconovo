@@ -1,0 +1,402 @@
+/* =Navegação de topo
+============================================================================= */
+#metaNav {
+  float: right;
+}
+#metaNav ul {
+  float: right;
+}
+#metaNav ul li {
+  float: left;
+  display: inline;
+  line-height: 22px;
+  font-size: .75em;
+}
+#metaNav ul li a:link, #metaNav ul li a:visited {
+  padding: 0 0 0 15px;
+  margin: 0 15px 0 0;
+  background: transparent url(../../Resources/Login/arrow_front_link.gif) no-repeat .1em .3em;
+}
+/* =Menu Principal
+============================================================================= */
+#topNav {
+  position: relative;
+  clear: both;
+  z-index: 100;
+  bottom: -1px;
+  display: block;
+  float: left;
+  width: 100%;
+}
+.navShadowBottom {
+  position: absolute;
+  bottom: -13px;
+  left: 0px;
+  background: transparent url(../../Resources/Login/bg_shadow_topnav.png) repeat-x top left;
+  width: 961px;
+  height: 12px;
+}
+#topNav ul {
+  float: left;
+  padding: 10px 0 0 0;
+}
+#topNav ul li {
+  line-height: 1.4;
+  float: left;
+  margin: 0 2px 0 0;
+}
+#topNav ul li li {
+  float: none;
+  display: block;
+  width: 14em;
+}
+#topNav ul.multiLine2 li a.aLevel1 {
+  min-height: 4em;
+}
+#topNav ul li a.aLevel1:link, #topNav ul li a.aLevel1:visited {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat top right;
+  display: block;
+  position: relative;
+  vertical-align: middle;
+  font-size: .75em;
+  color: #009e97;
+  text-decoration: none;
+  border: none;
+  padding: 0 15px 0 0;
+  line-height: 1.2;
+  z-index: 100;
+}
+#topNav ul li a.aLevel1:hover, #topNav ul li a.aLevel1:focus, #topNav ul li a.aLevel1:active {
+  text-decoration: underline;
+}
+#topNav ul li a span {
+  vertical-align: middle;
+}
+#topNav ul li a.aLevel1 span {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat top left;
+  display: block;
+  padding: 9px 0 10px 15px;
+}
+#topNav ul li a.aLevel1:hover span {
+  text-decoration: none;
+}
+#topNav ul.multiLine2 li a.aLevel1 span {
+  min-height: 2.4em;
+}
+#topNav ul li.navActive a.aLevel1:link, #topNav ul li.navActive a.aLevel1:visited {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 100% -100px;
+}
+#topNav ul li.navActive a.aLevel1 span {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 0 -100px;
+}
+#topNav ul li.navPremium a.aLevel1:link, #topNav ul li.navPremium a.aLevel1:visited {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 100% -300px;
+  color: #fff;
+}
+#topNav ul li.navPremium a.aLevel1 span {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 0 -300px;
+}
+#topNav li ul, #topNav li .navLevel2Container {
+  clear: both;
+  position: absolute;
+  width: 961px;
+  left: -999em;
+  background: #fff url(../../Resources/Login/bg_topnav.gif) repeat-x top left;
+  padding: 0;
+  padding-bottom: 15px;
+  z-index: 10;
+  border: 1px solid #ccc;
+  border-width: 0px 1px 1px 1px;
+}
+#topNav ul li .navLevel2Container ul {
+  position: relative;
+  float: none;
+  background: none;
+  border: none;
+}
+/*Links Sub-menu*/
+#topNav ul li a.aLevel2:link, #topNav ul li a.aLevel2:visited {
+  display: list-item;
+  font-size: .75em;
+  text-decoration: none;
+  padding: 0 0 0 17px;
+  margin: 2px 0 2px 15px;
+  width: 82%;
+  background: transparent url(../../Resources/Login/arrow_front_link.gif) no-repeat 0 .3em;
+  position: relative;
+}
+#topNav ul li a.premiumLink:link, #topNav ul li a.premiumLink:visited {
+  display: inline-block;
+  font-size: .75em;
+  /*color: #1f84e2;*/
+  text-decoration: none;
+  line-height: 1.7em;
+  padding: 0 0 0 19px;
+  margin: 0 0 0 12px;
+  background: url(../../Resources/Login/ic_premium_02_trans_on.png) no-repeat 0 .25em;
+  position: relative;
+}
+#topNav ul li a.aLevel2:hover, #topNav ul li a.aLevel2:focus, #topNav ul li a.aLevel2:active {
+  text-decoration: underline;
+}
+/*Menu Principal Hover*/
+#topNav li:hover ul, #topNav li.navHover ul, #topNav li:hover div.navLevel2Container, #topNav li.navHover div.navLevel2Container {
+  left: 1px;
+  margin-top: 0;
+}
+#topNav ul li.navHover a.aLevel1:link, #topNav ul li.navHover a.aLevel1:visited {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 100% -200px;
+  color: #009e97;
+}
+#topNav ul li.navNoSubLevels a.aLevel1:hover, #topNav ul li.navNoSubLevels a.aLevel1:focus, #topNav ul li.navNoSubLevels a.aLevel1:active {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 100% -100px;
+  color: #009e97;
+}
+#topNav ul li.navNoSubLevels a.aLevel1:hover span, #topNav ul li.navNoSubLevels a.aLevel1:focus span, #topNav ul li.navNoSubLevels a.aLevel1:active span {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 0 -100px;
+  color: #009e97;
+}
+#topNav ul li.navHover a.aLevel1 span {
+  background: transparent url(../../Resources/Login/topNav_tab2.gif) no-repeat 0 -200px;
+}
+/*Sub-Menu*/
+#topNav .content {
+  padding: 15px
+}
+#topNav div.navLevel2Container h2 {
+  font-size: .85em;
+  padding: 0 0 0 15px;
+}
+#topNav .navLevel2Cols {
+  float: left;
+  width: 23%;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  border-left: 1px solid transparent;
+}
+#topNav .firstCol {
+  border: none;
+}
+/*Acesso Directo*/
+#topNav div.specialCol {
+  float: left;
+  width: 23%;
+  background: #fff;
+  border: 1px solid #c0ceca;
+  padding-right: 15px;
+}
+#topNav div.specialCol h2 {
+  margin: 10px 10px 2px 13px;
+  padding: 0 0 0 25px;
+  background: transparent url(../../Resources/Login/arrows_front_link.gif) no-repeat 0 .3em;
+}
+#topNav div.specialCol ul {
+  padding-bottom: 15px;
+}
+/*Banner*/
+div.navTeaser {
+  margin-bottom: -15px;
+}
+/* =BreadCrumb Nav
+============================================================================= */
+#breadcrumbNavContainer {
+  position: relative;
+  height: 26px;
+  width: 100%;
+  font-size: .625em;
+  line-height: 1.5;
+}
+#breadcrumbNav {
+  position: relative;
+  float: left;
+}
+/* =Left Navigation
+============================================================================= */
+#leftNav {
+  float: left;
+  clear: left;
+  width: 210px;
+  margin: 0 15px -8px 0;
+}
+#leftNav h2 {
+  background: #B3DA2A url(../../Resources/Login/bg_hd_leftnav.png) no-repeat;
+  padding: 8px 5px 8px 10px;
+  font-size: .8em;
+  font-weight: normal;
+  color: #009e97;
+}
+#leftNav ul {
+  background: #f0f6d1;
+  padding: 10px 0 5px 0;
+  border: 1px solid #edf4f5;
+  margin: 0 0 10px 0;
+}
+#leftNav h2.specialNav {
+  background: #B3DA2A url(../../Resources/Login/bg_hd_leftnav_direct_access.png) no-repeat;
+  padding: 11px 15px 9px 35px;
+  border: none;
+}
+#leftNav ul.specialNavBox {
+  background: #fff;
+}
+#leftNav ul li {}
+#leftNav ul li a:link, #leftNav ul li a:visited {
+  font-size: .75em;
+  color: #009e97;
+  text-decoration: none;
+  display: block;
+  padding: 0 8px 8px 14px;
+  margin-left: 13px;
+  background: transparent url(../../Resources/Login/arrow_front_link.gif) no-repeat 0 .4em;
+  line-height: 1.4;
+}
+#leftNav ul li a:hover, #leftNav ul li a:focus, #leftNav ul li a:active {
+  text-decoration: underline;
+}
+#leftNav ul li a.navActive:link span, #leftNav ul li a.navActive:visited span {
+  color: #fff;
+  text-decoration: none;
+  background: #009f98;
+  padding: 1px 2px 2px 1px;
+  line-height: 1.4;
+}
+#leftNav ul li a.navActive:hover, #leftNav ul li a.navActive:focus, #leftNav ul li a.navActive:active {
+  text-decoration: underline;
+}
+#leftNav ul li a.premiumLink:link, #leftNav ul li a.premiumLink:visited { /*color: #1f84e2;*/ background: transparent url(../../Resources/Login/ic_premium2.gif) no-repeat 0 .25em;
+  padding-left: 22px;
+  margin-left: 5px;
+}
+#leftNav ul li img.new {
+  margin: 0 0 0 5px;
+  border: none;
+}
+/* =Tabbed Section Navigation
+============================================================================= */
+.tabNavigation {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 5px 0 0 0;
+  border-bottom: none;
+  margin-bottom: -1px;
+}
+.tabNavigation ul {
+  display: block;
+  float: left;
+}
+.tabNavigation ul li {
+  list-style: none;
+  float: left;
+  margin: 0 1px 0 0;
+  border-bottom: 1px solid #ccc;
+}
+.tabNavigation ul li.navActive {
+  border-bottom: 1px solid #efefef;
+}
+.tabNavigation ul li a:link, .tabNavigation ul li a:visited {
+  background: transparent url(../../Resources/Login/tabNav_tab2.gif) no-repeat right -50px;
+  display: block;
+  padding: 0 15px 0 0;
+  text-decoration: none;
+  border: none;
+  color: #333;
+}
+.tabNavigation ul li a span {
+  background: transparent url(../../Resources/Login/tabNav_tab2.gif) no-repeat left -50px;
+  display: block;
+  padding: 6px 0 3px 15px;
+  font-size: .84em;
+}
+.tabNavigation ul li a:hover, .tabNavigation ul li a:focus, .tabNavigation ul li a:active {
+  text-decoration: underline;
+}
+.tabNavigation ul li a:hover span {
+  text-decoration: underline;
+}
+.tabNavigation ul li.navActive a:link, .tabNavigation ul li.navActive a:visited {
+  background: transparent url(../../Resources/Login/tabNav_tab2.gif) no-repeat top right;
+  text-decoration: none;
+}
+.tabNavigation ul li.navActive a span {
+  background: transparent url(../../Resources/Login/tabNav_tab2.gif) no-repeat top left;
+  text-decoration: none;
+}
+/* =Toolbar
+============================================================================= */
+.toolBar {
+  display: block;
+  position: absolute;
+  top: 82px;
+  right: 32px;
+  font-size: .625em;
+  z-index: 1000;
+}
+.toolBar a:link {
+  display: block;
+  padding: 2px 0 0 26px;
+  margin-left: 10px;
+  float: Left;
+  text-decoration: none;
+}
+.toolBar a:hover {
+  display: block;
+  padding: 2px 0 0 26px;
+  margin-left: 10px;
+  float: Left;
+  text-decoration: underline;
+}
+.printLink {
+  background: transparent url(../../Resources/Login/ic_print.gif) no-repeat .1em 0;
+}
+.exportLink {
+  background: transparent url(../../Resources/Login/ic_export.gif) no-repeat .4em .3em;
+}
+.alertaLink {
+  background: transparent url(../../Resources/Login/ic_alerta.gif) no-repeat .1em .2em;
+}
+.addFav {
+  background: transparent url(../../Resources/Login/ic_addFav.gif) no-repeat .3em .2em;
+}
+/* =Toolbar HELP
+============================================================================= */
+.toolBarHelp {
+  position: absolute;
+  top: 112px;
+  right: 28px;
+  font-size: .75em;
+  z-index: 1002;
+  vertical-align: middle;
+}
+.toolBarHelp a:link {
+  padding: 2px 0 0 24px;
+  margin-left: 10px;
+  float: Left;
+  text-decoration: none;
+}
+a.ajudaLink2:link {
+  text-decoration: underline
+}
+a.ajudaLink2:hover {
+  text-decoration: none
+}
+a.ajudaLink {
+  background: transparent url(../../Resources/Login/bg_helpSwitch_sprite.png) no-repeat 0 0;
+  width: 78px;
+  height: 22px;
+}
+a.ajudaLinkOff {
+  background: transparent url(../../Resources/Login/bg_helpSwitch_sprite.png) no-repeat 0 -23px;
+  width: 78px;
+  height: 22px;
+}
+span.ajudaLink_dis {
+  padding: 2px 0 0 24px;
+  margin-left: 10px;
+  float: Left;
+  background: transparent url(../../Resources/Login/bg_helpSwitch_sprite.png) no-repeat 0 -50px;
+  width: 78px;
+  height: 22px;
+  color: #9ba1a1;
+  text-decoration: none;
+}
